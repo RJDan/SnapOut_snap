@@ -1,0 +1,50 @@
+name: rjd-snapout # you probably want to 'snapcraft register <name>'
+title: SnapOut # you probably want to 'snapcraft register <name>'
+version: '0.0.1' # just for humans, typically '1.2+git' or '1.3.2'
+summary: Create aliases snaps # 79 char long summary
+description: |
+                "Utility to auto-magically create default aliases for a snap's exposed apps."
+                The description above refers to the software: https://github.com/xxxxx
+                * I have packaged the software as a snap for **personal use** but I have made the snap available for free.
+                * I __do__  maintain the software itself and the snap. Please report __all__ software bugs to the me.
+                * I use this snap _daily_. It works _well enough_ on my system.
+                * Packaging 'style' : Shell script as a deamon.
+                * License refers to the original software and the snapcraft 'code'.
+
+website: https://github.com/RJDan/SnapOut_snap
+source-code: https://github.com/RJDan/SnapOut_snap
+#license: MIT
+#icon: Logo.svg
+
+base: core22 # the base snap is the execution environment for this snap
+architectures:
+    - amd64
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+# strict confinement fails, I guess due to permission issues with /dev/input/by-path
+
+plugs:
+    snapd:
+        interface: snapd-control
+apps:
+    snap-out:
+        command: bin/rjd-snap-expose.sh
+        plugs:
+            - home
+            - removable-media # maybe needed for access to OS on USB
+    snap-out-how:
+        command: bin/rjd-snap-expose-mkcmds.sh
+        plugs:
+            - home
+            - removable-media # maybe needed for access to OS on USB
+
+parts:
+    daemon:
+        plugin: dump
+        source: Scripts/ # in the project directory
+        override-pull: |
+                craftctl default
+                chmod +xr *sh
+        organize: # this is for staging stuff from the parts directory
+            '*.sh': bin/
+#            "Logo.svg" : snap/Logo.svg
