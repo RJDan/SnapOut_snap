@@ -1,17 +1,28 @@
-# Texlive snap
+# Snap Out snap
 
-> clone of the NucciTheBoss snap.
 > Warning - this snap package is still a work-in-progress.
 
-"The basic scheme of TexLive in a snap! This is a clone of the snap: https://github.com/NucciTheBoss/texlive."
-*  The description above refers to the software: https://mirror.ctan.org/systems/texlive/tlnet/
-* I have packaged the software as a snap for **personal use** but I have made the snap available for free. It can be used as a standalone snap. It was created to share 'content' with other snaps I package.
-* I do not maintain the software itself. I only maintain the snap packaging. Please report software bugs to the maintainers.
-* Report snap-specific bugs to me.
-* I _DO_ use this snap. It _has been superficially tested_ on my system. I __do not__ track the latest version.
-* __This snap works in strictly confined mode.__
-* Packaging 'style' : tarball build for linux machines.
-* License refers to the original software, not the snapcraft 'code'.
+"Utility to auto-magically create default aliases for a snap's exposed apps."
+The description above refers to the software: https://github.com/xxxxx
+* I have packaged the software as a snap for **personal use** but I have made the snap available for free.
+* I __do__  maintain the software itself and the snap. Please report __all__ software bugs to the me.
+* I use this snap _daily_. It works _well enough_ on my system.
+* __This snap DOES NOT works in strictly confined mode.__
+* Packaging 'style' : Shell script as a deamon.
+* License refers to the original software and the snapcraft 'code'.
 * More info:
-* Run the following to rename the snap
-```sudo snap alias rjd-texlive.pdflatex pdflatex```
+* Run as:
+```rjd-snapout.snap-out-how```
+
+## What is this?
+
+This is a utility to create aliases for snaps that do not have 'official' aliases.
+
+## How do I use it?
+
+**At the moment:**
+- This is literally a script that creates a file of commands to run.
+- It does not have access to snapd and cannot directly rename apps to their aliases.
+- You need to run it as a script like this:
+```rjd-snapout.snap-out-how <snapname>
+sudo /snap/rjd-snapout/current/bin/rjd-snap-expose.sh```

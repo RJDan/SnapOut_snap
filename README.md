@@ -1,4 +1,4 @@
-# Snap Out snap
+# Snap Out
 
 > Warning - this snap package is still a work-in-progress.
 
@@ -12,7 +12,7 @@ The description above refers to the software: https://github.com/xxxxx
 * License refers to the original software and the snapcraft 'code'.
 * More info:
 * Run as:
-```rjd-texlive.snapout```
+```rjd-snapout.snap-out-how```
 
 ## What is this?
 
@@ -23,5 +23,6 @@ This is a utility to create aliases for snaps that do not have 'official' aliase
 **At the moment:**
 - This is literally a script that creates a file of commands to run.
 - It does not have access to snapd and cannot directly rename apps to their aliases.
-- You need to run it as a script like this
-```sudo /snap/rjd-snapout/current/bin/rjd-snap-expose.sh <snapname>```
+- You need to run it as a script like this:
+```rjd-snapout.snap-out-how <snapname>
+sudo /snap/rjd-snapout/current/bin/rjd-snap-expose.sh```

@@ -23,9 +23,9 @@ grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 # strict confinement fails, I guess due to permission issues with /dev/input/by-path
 
-plugs:
-    snapd:
-        interface: snapd-control
+# plugs:
+#     snapd:
+#         interface: snapd-control
 apps:
     snap-out:
         command: bin/rjd-snap-expose.sh
