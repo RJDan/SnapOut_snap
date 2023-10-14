@@ -4,12 +4,14 @@ version: '0.0.1' # just for humans, typically '1.2+git' or '1.3.2'
 summary: Create aliases snaps # 79 char long summary
 description: |
                 "Utility to auto-magically create default aliases for a snap's exposed apps."
-                The description above refers to the software: https://github.com/xxxxx
+                The description above refers to the software: TBC
                 * I have packaged the software as a snap for **personal use** but I have made the snap available for free.
                 * I __do__  maintain the software itself and the snap. Please report __all__ software bugs to the me.
-                * I use this snap _daily_. It works _well enough_ on my system.
-                * Packaging 'style' : Shell script as a deamon.
+                * I use this snap _as a set of scripts_. It works _well enough_ on my system.
+                * __This snap DOES NOT works in strictly confined mode.__
+                * Packaging 'style' : Shell scripts.
                 * License refers to the original software and the snapcraft 'code'.
+                * More info: Please see the readme file.
 
 website: https://github.com/RJDan/SnapOut_snap
 source-code: https://github.com/RJDan/SnapOut_snap
@@ -32,7 +34,7 @@ apps:
         plugs:
             - home
             - removable-media # maybe needed for access to OS on USB
-    snap-out-how:
+    snap-out-mkcmds:
         command: bin/rjd-snap-expose-mkcmds.sh
         plugs:
             - home
